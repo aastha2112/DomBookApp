@@ -24,7 +24,7 @@ if (localData.length == 0 || localData.email !== "admin@empher.com") {
         borrowedDays: Math.round(Math.random() * 10),
         url: "https://m.media-amazon.com/images/I/71ZB18P3inL._SY522_.jpg",
       };
-      await fetch(localurl, {
+      await fetch(baseUrl, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -120,7 +120,7 @@ function createBookCard(arr) {
 
 async function getData() {
   try {
-    let res = await fetch(localurl);
+    let res = await fetch(baseUrl);
     let data = await res.json();
 
     createBookCard(data);
