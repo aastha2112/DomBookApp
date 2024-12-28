@@ -18,7 +18,7 @@ if (localData.length == 0 || localData.email !== "admin@empher.com") {
         title: adminForm.bookTitle.value,
         author: adminForm.author.value,
         category: adminForm.category.value,
-        availability_status: true,
+        isAvailable: true,
         isVerified: false,
         borrowedDays: Math.round(Math.random() * 10),
       };
@@ -54,11 +54,11 @@ function createBookCard(arr) {
     bookAuthor.textContent = `By: ${el.author}`;
 
     let bookCategory = document.createElement("h4");
-    bookCategory.textContent = `Category: ${el.author}`;
+    bookCategory.textContent = `Category: ${el.category}`;
 
     let availableStatus = document.createElement("h4");
     availableStatus.textContent = `Availabity: ${
-      el.availability_status ? "is Available" : "Unavailable"
+      el.isAvailable ? "is Available" : "Unavailable"
     }`;
 
     let borrowedDays = document.createElement("h4");
@@ -94,6 +94,8 @@ function createBookCard(arr) {
         await fetch(`${baseUrl}/${el.id}`, {
           method: "DELETE",
         });
+
+        await displayData();
         console.log("Delete done ");
       }
     });
