@@ -1,0 +1,49 @@
+#adminForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgb(125, 146, 185);
+  border-radius: 1rem;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+#mainCont {
+  display: flex;
+  width: 20%;
+  margin: 5rem auto;
+}
+input {
+  height: 30px;
+}
+#submit {
+  width: 40%;
+  height: 2.5rem;
+  margin: 0 auto;
+  background-color: rgb(29, 29, 65);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+
+#submit:hover {
+  background-color: rgb(81, 81, 111);
+}
+body {
+  background-color: rgb(195, 205, 241);
+  margin: 0;
+}
+
+select {
+  height: 2.5rem;
+}
+
+/* cont book */
+
+#bookCont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 3rem;
+}

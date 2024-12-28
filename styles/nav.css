@@ -1,0 +1,27 @@
+#navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+
+  background-color: rgb(17, 17, 45);
+}
+
+.navlinks {
+  display: flex;
+  width: 30%;
+
+  justify-content: space-evenly;
+}
+
+.navlinks > a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navlinks > a:hover {
+  color: rgb(187, 178, 207);
+}
