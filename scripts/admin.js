@@ -1,4 +1,4 @@
-import { baseUrl } from "./baseUrl.js";
+import { baseUrl, localurl } from "./baseUrl.js";
 
 let localData = JSON.parse(localStorage.getItem("loginData"));
 let adminForm = document.getElementById("adminForm");
@@ -14,6 +14,7 @@ if (localData.length == 0 || localData.email !== "admin@empher.com") {
   adminForm.addEventListener("submit", async (e) => {
     try {
       e.preventDefault();
+
       let book = {
         title: adminForm.bookTitle.value,
         author: adminForm.author.value,
@@ -21,8 +22,9 @@ if (localData.length == 0 || localData.email !== "admin@empher.com") {
         isAvailable: true,
         isVerified: false,
         borrowedDays: Math.round(Math.random() * 10),
+        url: "https://m.media-amazon.com/images/I/71ZB18P3inL._SY522_.jpg",
       };
-      await fetch(baseUrl, {
+      await fetch(localurl, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -44,8 +46,10 @@ window.onload = async () => {
 };
 
 function createBookCard(arr) {
+  bookCont.innerHTML = "";
   arr.map((el) => {
     let bookCard = document.createElement("div");
+    bookCard.classList.add("bookCard");
 
     let bookTitle = document.createElement("h2");
     bookTitle.textContent = el.title;
@@ -116,7 +120,7 @@ function createBookCard(arr) {
 
 async function getData() {
   try {
-    let res = await fetch(baseUrl);
+    let res = await fetch(localurl);
     let data = await res.json();
 
     createBookCard(data);
