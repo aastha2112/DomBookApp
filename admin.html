@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin</title>
+    <title>Admin Management Page</title>
   </head>
   <body>
     <header>
@@ -16,8 +16,28 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div id="mainCont">
+        <form id="adminForm">
+          <label for="bookTitle">Title</label>
+          <input id="bookTitle" type="text" placeholder="Book Title" />
+
+          <label for="author">Author</label>
+          <input id="author" type="text" placeholder="Book Author" />
+
+          <select id="category">
+            <option value="">Category</option>
+            <option value="fiction">Fiction</option>
+            <option value="comedy">Comedy</option>
+            <option value="technical">Technical</option>
+          </select>
+          <input type="submit" value="Add Book" />
+        </form>
+      </div>
+      <div id="bookCont"></div>
+    </main>
     <footer></footer>
   </body>
   <script src="./scripts/nav.js"></script>
+  <script src="./scripts/admin.js" type="module"></script>
 </html>
